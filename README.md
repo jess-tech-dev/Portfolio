@@ -82,7 +82,7 @@ This repository contains:
 
 - **Email**: jessy.kalanga.dev@gmail.com
 - **LinkedIn**: [Jessy Mbay](https://www.linkedin.com/in/jessy-mbay-9738a7360?trk=contact-info)
-- **GitHub**: [github.com/your-github](https://github.com/jess-tech-dev)
+- **GitHub**: [github.com/my-github](https://github.com/jess-tech-dev)
 - **Shopify Store**: [Higherjess Shop](https://admin.shopify.com/store/j0kjb3-bn?ui_locales=en)
 - **Comprehensive Social Media Marketing**:[Freelancer] (https://www.freelancer.com/projects/facebook-marketing/Comprehensive-Social-Media-Marketing-39340695?frm=jessy02&sb=t)
 -**Fiverr**:[Freelancer](https://www.fiverr.com/s/8zovAjZ)
