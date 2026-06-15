@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jessy Kalanga | Full-Stack Developer & CEO</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0B0B1E;
+            --rose-pale: #FFE4F1;
+            --magenta: #FF2E93;
+            --card-bg: #161632;
+            --text-muted: #A2A2C2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--rose-pale);
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* HERO SECTION */
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 120px 0 60px 0;
+            position: relative;
+        }
+
+        .giant-portfolio-text {
+            position: absolute;
+            top: 40px;
+            left: 20px;
+            font-size: 8rem;
+            font-weight: 800;
+            letter-spacing: 6px;
+            color: var(--magenta);
+            opacity: 0.07;
+            user-select: none;
+            pointer-events: none;
+            white-space: nowrap;
+        }
+
+        .hero-content {
+            animation: fadeInUp 0.8s ease-out forwards;
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        .profile-wrapper {
+            margin-bottom: 24px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--magenta);
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(255, 46, 147, 0.3);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--magenta);
+            margin-bottom: 12px;
+        }
+
+        .greeting {
+            font-size: 3.2rem;
+            font-weight: 700;
+            color: #FFFFFF;
+            margin-bottom: 20px;
+        }
+
+        .highlight-magenta {
+            color: var(--magenta);
+            text-shadow: 0 0 10px rgba(255, 46, 147, 0.2);
+        }
+
+        .bio-text {
+            color: var(--rose-pale);
+            max-width: 680px;
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        /* VITRINE VIDÉO PRINCIPALE (Tous tes projets) */
+        .main-video-container {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 800px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 2px solid rgba(255, 46, 147, 0.2);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            background: #111126;
+        }
+
+        .main-video-container video {
+            width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* BOUTONS & RÉSEAUX */
+        .btn-group {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 45px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 26px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary { background-color: var(--magenta); color: #FFFFFF; }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(255, 46, 147, 0.5); }
+        .btn-secondary { border: 1.5px solid var(--text-muted); color: var(--rose-pale); }
+        .btn-secondary:hover { border-color: var(--magenta); color: var(--magenta); transform: translateY(-2px); }
+
+        .social-links { display: flex; gap: 24px; }
+        .social-icon { display: flex; align-items: center; gap: 8px; color: var(--text-muted); font-size: 0.9rem; transition: color 0.3s ease; }
+        .social-icon:hover { color: var(--magenta); }
+
+        /* SECTIONS PROJETS ET PARCOURS */
+        .projects-section, .experience-section { padding: 80px 0; }
+        .section-title { font-size: 2.2rem; position: relative; margin-bottom: 60px; font-weight: 700; color: #FFFFFF; }
+        .section-title::after { content: ''; position: absolute; left: 0; bottom: -10px; width: 50px; height: 4px; background-color: var(--magenta); box-shadow: 0 0 8px var(--magenta); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 46, 147, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover { transform: translateY(-8px); }
+
+        .card-img-container {
+            height: 200px;
+            background: #111126;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.1);
+            font-size: 1.5rem;
+            position: relative;
+        }
+
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+        }
+
+        .project-info { padding: 24px; }
+        .project-tags { display: flex; gap: 10px; margin-bottom: 14px; }
+        .tag { font-size: 0.75rem; padding: 4px 12px; border-radius: 20px; background: rgba(255, 46, 147, 0.12); color: var(--magenta); font-weight: 600; }
+        
+        .project-info h3 { font-size: 1.4rem; margin-bottom: 10px; color: #FFFFFF; }
+        .project-info p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; }
+        .project-link { display: inline-flex; align-items: center; gap: 6px; color: var(--magenta); font-weight: 600; font-size: 0.9rem; }
+
+        /* TIMELINE */
+        .timeline { position: relative; border-left: 2px solid var(--card-bg); padding-left: 30px; }
+        .timeline-item { position: relative; margin-bottom: 45px; }
+        .timeline-icon { position: absolute; left: -42px; top: 4px; background-color: var(--bg-dark); border: 2px solid var(--magenta); color: var(--magenta); border-radius: 50%; width: 24px; height: 24px; }
+        .timeline-content { background-color: var(--card-bg); padding: 24px; border-radius: 8px; }
+        .time-period { font-size: 0.85rem; color: var(--magenta); font-weight: 700; }
+        .timeline-content h3 { font-size: 1.3rem; color: #FFFFFF; margin: 4px 0; }
+        .timeline-content h4 { color: var(--rose-pale); opacity: 0.8; font-weight: 500; margin-bottom: 10px; }
+        .timeline-content p { color: var(--text-muted); font-size: 0.95rem; }
+
+        @media (max-width: 768px) {
+            .giant-portfolio-text { font-size: 4.5rem; top: 20px; }
+            .greeting { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="giant-portfolio-text">PORTFOLIO</div>
+
+    <!-- SECTION HERO AVEC TA VIDÉO GÉNÉRALE -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-wrapper">
+                    <img src="jessy.png" alt="Jessy Kalanga" class="profile-img" onerror="this.style.display='none'">
+                </div>
+
+                <div class="subtitle">Full-Stack Developer & CEO</div>
+                <h1 class="greeting">Hi, I am <span class="highlight-magenta">Jessy Kalanga</span></h1>
+
+                <p class="bio-text">
+                    A full-stack Web Developer, Community Manager, and Digital Entrepreneur dedicated to building modern websites and helping businesses grow online. As the founder of <strong>Higherjess Business</strong> and <strong>H Academia</strong>, I combine technical expertise and creativity to deliver impactful digital solutions.
+                </p>
+
+                <!-- Boutons d'action -->
+                <div class="btn-group">
+                    <a href="Jessy_Kalanga_CV.pdf" download="Jessy_Kalanga_CV.pdf" class="btn btn-primary">
+                        <i class="fa-solid fa-download"></i> Download CV
+                    </a>
+                    <a href="mailto:ceo@higherjess.com" class="btn btn-secondary">
+                        <i class="fa-solid fa-envelope"></i> Hire Me
+                    </a>
+                    <a href="tel:+243817817177" class="btn btn-secondary">
+                        <i class="fa-solid fa-phone"></i> +243 81 781 7177
+                    </a>
+                </div>
+
+                <!-- Réseaux Sociaux -->
+                <div class="social-links">
+                    <a href="https://github.com/jess-tech-dev" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-github"></i> <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-linkedin"></i> <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-x-twitter"></i> <span>X</span>
+                    </a>
+                </div>
+
+                <!-- 🎥 ICI LA VIDÉO GÉNÉRALE QUI PARLE DE TOI ET DE TOUS TES PROJETS -->
+                <div class="main-video-container">
+                    <video loop autoplay playsinline muted controls>
+                        <source src="portfolio.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PROJETS DETTAILÉS -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+
+            <div class="projects-grid">
+                
+                <!-- Projet 1: Snack Express -->
+                <div class="project-card">
+                    <div class="card-img-container">
+                        SNACK EXPRESS
+                        <img src="pic2.webp" alt="Snack Express" onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Firebase</span>
+                            <span class="tag">Full-Stack</span>
+                        </div>
+                        <h3>Snack Express</h3>
+                        <p>A web-based food ordering system complete with real-time database syncing, user authentication, and dynamic carts[cite: 1].</p>
+                    </div>
+                </div>
+
+                <!-- Projet 2: Higherjess Store -->
+                <div class="project-card">
+                    <div class="card-img-container">
+                        HIGHERJESS STORE
+                        <img src="pic3.png" alt="Higherjess Store" onerror="this.style.display='none'">
+                    </div>
+                    <div class="project-info">
+                        <div class="project-tags">
+                            <span class="tag">Vercel</span>
+                            <span class="tag">HTML / CSS</span>
+                        </div>
+                        <h3>Higherjess Store</h3>
+                        <p>Built a scalable architecture and responsive UI optimized beautifully for mobile and desktop users. Ideal for global retail and digital stores[cite: 1].</p>
+                        <a href="https://www.higherjess.store" target="_blank" class="project-link">Live Preview →</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION PARCOURS -->
+    <section class="experience-section">
+        <div class="container">
+            <h2 class="section-title">Professional Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <span class="time-period">2024 - Present</span>
+                        <h3>Founder & Managing Director</h3>
+                        <h4>Higherjess Business & H Academia</h4>
+                        <p>Developing custom web apps, e-learning platforms, and executing digital transformation strategies for companies.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-icon"></div>
+                    <div class="timeline-content">
+                        <span class="time-period">Mai 2025</span>
+                        <h3>Web Developer & Community Manager</h3>
+                        <h4>Quantum Vertex</h4>
+                        <p>Built responsive web applications, participated in core ERP development projects, and drafted user documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
